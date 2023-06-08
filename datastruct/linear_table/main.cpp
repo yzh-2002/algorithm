@@ -1,4 +1,4 @@
-#include "seqlist.h"
+#include "linear_table.hpp"
 
 int main(){
     SeqList<int> seq(10);

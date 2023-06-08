@@ -1,2 +1,2 @@
-main: main.cpp linear_table.cpp
-	g++ -o main main.cpp linear_table.cpp
+main: main.cpp
+	g++ -o main main.cpp
