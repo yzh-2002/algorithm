@@ -1,4 +1,4 @@
-#include "seqlist.h"
+#include "SeqList.hpp"
 
 int main(){
     SeqList<int> seq(10);

@@ -1,4 +1,4 @@
-#include "seqlist.h"
+#include "SeqList.h"
 using namespace std;
 
 template <class T>
