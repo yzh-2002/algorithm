@@ -3,6 +3,8 @@
         "*.json": "jsonc",
         "istream": "cpp",
         "iostream": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "vector": "cpp",
+        "functional": "cpp"
     }
 }
