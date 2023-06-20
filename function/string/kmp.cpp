@@ -21,7 +21,7 @@ void getNext(string pattern, vector<int> &next)
             j++;
         next[i] = j;
     }
-}
+};
 
 /**
  * @origin:源串
@@ -30,34 +30,53 @@ int kmp(string origin, string pattern)
 {
     vector<int> next(pattern.size());
     getNext(pattern, next);
-    int i, j = 0;
+    // for (int i = 0; i < next.size(); i++)
+    // {
+    //     cout << next[i] << endl;
+    // }
+    int i = 0, j = 0;
     while (i < origin.size() && j < pattern.size())
     {
-        if (origin[i] == pattern[j]){
+        if (origin[i] == pattern[j])
+        {
             i++;
             j++;
-        }else{
-            if (j>0){
-                j =next[j-1];
-            }else{
+        }
+        else
+        {
+            if (j > 0)
+            {
+                // 中间不等，则j移动
+                j = next[j - 1];
+            }
+            else
+            {
+                // 首位不等，i后移
                 i++;
             }
         }
-        if (j==pattern.size()){
-            return i-j;
-        }else{
-            return -1;
-        }
     }
-}
+    if (j == pattern.size())
+    {
+        return i - j;
+    }
+    else
+    {
+        return -1;
+    }
+};
 
-int main() {
+int main()
+{
     string text = "ABABABCABAABABABD";
     string pattern = "ABABABD";
     int pos = kmp(text, pattern);
-    if (pos != -1) {
+    if (pos != -1)
+    {
         cout << "Pattern found at position " << pos << endl;
-    } else {
+    }
+    else
+    {
         cout << "Pattern not found" << endl;
     }
     return 0;
